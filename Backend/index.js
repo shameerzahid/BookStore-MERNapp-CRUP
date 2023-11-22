@@ -3,9 +3,10 @@ const dotenv = require ('dotenv')
 const connectDB = require('./src/config/db')
 const bookRoutes = require('./src/routes/bookRoutes')
 const app = express()
+const cors = require('cors')
 
 app.use(express.json());
-
+app.use(cors());
 dotenv.config();
 
 connectDB();

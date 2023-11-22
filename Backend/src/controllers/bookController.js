@@ -1,6 +1,6 @@
 const Book = require('../Models/bookModel')
 
-
+//this will simply check that all fields are filled and after verifying data will be added to DB.
 const createBook = async(req,res) =>{
     try{
 const {title, author , genre, publishedYear} = req.body;
@@ -34,7 +34,7 @@ if(newBook){
 
 }
 
-
+//return all the books which are stored in db.
 const getAllBook = async(req,res) =>{
 
     try {
@@ -52,6 +52,7 @@ const getAllBook = async(req,res) =>{
 
 }
 
+//handles search functionality to search for a single book.
 const getSingleBook = async(req,res) =>{
 
     try{
@@ -66,6 +67,7 @@ const getSingleBook = async(req,res) =>{
     }
 }
 
+// this will update the record
 const updateBook = async(req,res) =>{
     try {
         const { title, author, genre, publishedYear } = req.body;
@@ -86,18 +88,19 @@ const updateBook = async(req,res) =>{
       }
 }
 
-const deleteBook = async(req,res) =>{
+//to delete the book from the database.
+const deleteBook = async (req, res) => {
+  try {
+    const deletedBook = await Book.findByIdAndDelete(req.params.id);
+    if (!deletedBook) {
+      return res.status(404).json({ message: 'Book not found' });
+    }
+    res.status(200).json({ message: 'Book deleted successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
 
-    try {
-        const deletedBook = await Book.findByIdAndRemove(req.params.id);
-        if (!deletedBook) {
-          return res.status(404).json({ message: 'Book not found' });
-        }
-        res.status(200).json({ message: 'Book deleted successfully' });
-      } catch (err) {
-        res.status(500).json({ error: "Internal Server Error"});
-      }
 
-
-}
 module.exports ={createBook , getAllBook,getSingleBook,updateBook, deleteBook};
