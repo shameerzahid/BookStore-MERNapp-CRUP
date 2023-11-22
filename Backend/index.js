@@ -1,7 +1,7 @@
 const express = require ('express')
 const dotenv = require ('dotenv')
-const connectDB = require('./config/db')
-const bookRoutes = require('./routes/bookRoutes')
+const connectDB = require('./src/config/db')
+const bookRoutes = require('./src/routes/bookRoutes')
 const app = express()
 
 app.use(express.json());

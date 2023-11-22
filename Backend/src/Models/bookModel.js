@@ -7,8 +7,10 @@ const bookModel = mongoose.Schema(
     genre: { type: String, required: true },
     publishedYear:{type: Number, required: true}
   },
-  { timestaps: true }
+  { timestamps: true }
 );
+
+
 
 
 const Book = mongoose.model("Book", bookModel );
