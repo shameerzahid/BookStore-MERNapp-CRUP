@@ -20,7 +20,7 @@ This MERN (MongoDB, Express, React, Node.js) application allows for basic CRUD (
     ```bash
     cd Backend
     npm install
-    nodemon start
+    nodemon start OR node index.js
     ```
 
 3. Setting up the frontend:
