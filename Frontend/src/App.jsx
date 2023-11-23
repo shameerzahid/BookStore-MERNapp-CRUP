@@ -13,7 +13,7 @@ function App() {
   return (
     <>
     <Routes>
-      <Route path='/' element={<MainPage/>}/>
+      <Route path='/*' element={<MainPage/>}/>
       <Route path='/add-book' element={<AddBook/>}/>
       <Route path='/check-all-books' element={<AllBooks/>}/>
       <Route path="/books/:id" element={<ViewBook/>}/>
