@@ -12,7 +12,7 @@ This MERN (MongoDB, Express, React, Node.js) application allows for basic CRUD (
 
 1. Clone the repository:
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/shameerzahid/BookStore-MERNapp-CRUP.git 
     cd BookStore-Mernapp-CRUP
     ```
 
